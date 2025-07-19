@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔥 ENG ZEZO🔥</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap');
+    
+    * {
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><text y="16" font-size="16">💀</text></svg>'), auto;
+    }
+
+    body {
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(139, 0, 0, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(75, 0, 130, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(220, 20, 60, 0.4) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0f0f0f 100%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .horror-title {
+      font-family: 'Creepster', cursive;
+      text-shadow: 
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 30px #ff0000,
+        0 0 40px #ff0000;
+      animation: flicker 2s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+          0 0 10px #ff0000,
+          0 0 20px #ff0000,
+          0 0 30px #ff0000,
+          0 0 40px #ff0000;
+      }
+      20%, 24%, 55% {
+        text-shadow: none;
+      }
+    }
+
+    .blood-drip {
+      position: absolute;
+      width: 2px;
+      background: linear-gradient(to bottom, #ff0000, #8b0000);
+      animation: drip 3s infinite;
+    }
+
+    @keyframes drip {
+      0% { height: 0; top: 0; }
+      50% { height: 100px; top: 0; }
+      100% { height: 0; top: 100px; }
+    }
+
+    .floating-skull {
+      position: fixed;
+      font-size: 2rem;
+      animation: float 6s ease-in-out infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    .glitch {
+      animation: glitch 0.3s infinite;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    .horror-card {
+      background: linear-gradient(145deg, rgba(139, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+      border: 2px solid #ff0000;
+      box-shadow: 
+        0 0 20px rgba(255, 0, 0, 0.5),
+        inset 0 0 20px rgba(139, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .horror-card:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 
+        0 0 40px rgba(255, 0, 0, 0.8),
+        inset 0 0 30px rgba(139, 0, 0, 0.5);
+    }
+
+    .horror-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 0, 0, 0.1), transparent);
+      animation: scan 3s infinite;
+    }
+
+    @keyframes scan {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    .pulsing-eye {
+      animation: pulse-eye 2s infinite;
+    }
+
+    @keyframes pulse-eye {
+      0%, 100% { transform: scale(1); color: #ff0000; }
+      50% { transform: scale(1.2); color: #ffff00; }
+    }
+
+    .matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .matrix-char {
+      position: absolute;
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 14px;
+      animation: matrix-fall 10s linear infinite;
+    }
+
+    @keyframes matrix-fall {
+      0% { transform: translateY(-100vh); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    .loading-skull {
+      animation: spin-skull 2s linear infinite;
+    }
+
+    @keyframes spin-skull {
+      from { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.2); }
+      to { transform: rotate(360deg) scale(1); }
+    }
+
+    .blood-text {
+      color: #ff0000;
+      text-shadow: 2px 2px 4px #8b0000;
+      animation: blood-glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes blood-glow {
+      from { text-shadow: 2px 2px 4px #8b0000; }
+      to { text-shadow: 2px 2px 20px #ff0000, 0 0 30px #ff0000; }
+    }
+
+    .creepy-border {
+      border-image: linear-gradient(45deg, #ff0000, #8b0000, #ff0000) 1;
+      animation: border-pulse 3s infinite;
+    }
+
+    @keyframes border-pulse {
+      0%, 100% { border-width: 2px; }
+      50% { border-width: 4px; }
+    }
+
+    .ghost-effect {
+      animation: ghost 4s ease-in-out infinite;
+    }
+
+    @keyframes ghost {
+      0%, 100% { opacity: 0.7; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body class="min-h-screen relative">
+
+  <!-- Mateix-->
+  <div class="matrix-bg" id="matrixBg"></div>
+
+  
+  <div class="floating-skull" style="top: 10%; left: 10%; animation-delay: 0s;">💀</div>
+  <div class="floating-skull" style="top: 20%; right: 15%; animation-delay: 1s;">👻</div>
+  <div class="floating-skull" style="bottom: 30%; left: 20%; animation-delay: 2s;">🔥</div>
+  <div class="floating-skull" style="top: 60%; right: 10%; animation-delay: 3s;">⚡</div>
+
+  <!-- Blood Drips -->
+  <div class="blood-drip" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="blood-drip" style="left: 30%; animation-delay: 1s;"></div>
+  <div class="blood-drip" style="left: 60%; animation-delay: 2s;"></div>
+  <div class="blood-drip" style="left: 80%; animation-delay: 0.5s;"></div>
+
+  <div class="max-w-4xl mx-auto p-8 relative z-10">
+    <div class="horror-card p-8 rounded-2xl text-center relative">
+      
+      <!-- Loading Indicator -->
+      <div class="absolute top-4 left-4 loading-skull hidden" id="loader">
+        <span class="text-3xl">💀</span>
+      </div>
+
+      <!-- Main Title -->
+      <div class="mb-8">
+        <h1 class="horror-title text-5xl font-bold mb-4 text-red-500">
+          🔥 Strong Skills! 🔥
+        </h1>
+        <div class="flex justify-center items-center space-x-4 rtl:space-x-reverse">
+          <span class="pulsing-eye text-3xl">👁️</span>
+          <p class="text-xl text-gray-300 font-bold">
+        متخفش: <span class="blood-text text-2xl" id="username">aboelyazeed1</span>
+          </p>
+          <span class="pulsing-eye text-3xl">👁️</span>
+        </div>
+      </div>
+
+      <!-- Stats Container -->
+      <div id="result" class="text-gray-300 text-lg mb-8"></div>
+
+      <!-- Chart Container -->
+      <div class="horror-card p-6 rounded-xl mt-8 hidden" id="chartContainer">
+        <h3 class="horror-title text-2xl text-red-400 mb-4">📊 Plan A</h3>
+        <canvas id="solvedChart" class="max-h-64"></canvas>
+      </div>
+
+      <!-- Footer -->
+      <div class="mt-8 text-center">
+        <p class="text-gray-400 text-sm ghost-effect">
+          🌙 البيانات تتحديث من  كل 10 دقائق...
+        </p>
+        <div class="flex justify-center space-x-2 rtl:space-x-reverse mt-2">
+          <span class="text-red-500 animate-bounce">💀</span>
+          <span class="text-red-400 text-xs">Supported by dark forces</span>
+          <span class="text-red-500 animate-bounce" style="animation-delay: 0.3s;">💀</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const defaultHandle = 'aboelyazeed1';
+    let chartInstance = null;
+
+    // Create Matrix Effect
+    function createMatrixEffect() {
+      const matrixBg = document.getElementById('matrixBg');
+      const chars = '01أبجدهوزحطيكلمنسعفصقرشتثخذضظغ';
+      
+      for (let i = 0; i < 50; i++) {
+        const char = document.createElement('div');
+        char.className = 'matrix-char';
+        char.textContent = chars[Math.floor(Math.random() * chars.length)];
+        char.style.left = Math.random() * 100 + '%';
+        char.style.animationDelay = Math.random() * 10 + 's';
+        char.style.animationDuration = (Math.random() * 10 + 5) + 's';
+        matrixBg.appendChild(char);
+      }
+    }
+
+    
+    function addGlitchEffect() {
+      const elements = document.querySelectorAll('.blood-text, .horror-title');
+      elements.forEach(el => {
+        if (Math.random() > 0.7) {
+          el.classList.add('glitch');
+          setTimeout(() => el.classList.remove('glitch'), 300);
+        }
+      });
+    }
+
+    async function fetchSolvedProblems() {
+      const loader = document.getElementById('loader');
+      const resultDiv = document.getElementById('result');
+      const chartContainer = document.getElementById('chartContainer');
+
+      loader.classList.remove('hidden');
+      resultDiv.innerHTML = '';
+
+      try {
+        
+        const cached = localStorage.getItem('cf_stats');
+        if (cached) {
+          const parsed = JSON.parse(cached);
+          const now = new Date().getTime();
+          if (now - parsed.timestamp < 10 * 60 * 1000) {
+            renderUI(parsed.data);
+            loader.classList.add('hidden');
+            return;
+          }
+        }
+
+        const res = await fetch(`https://codeforces.com/api/user.status?handle=${defaultHandle}`);
+        const data = await res.json();
+
+        if (data.status !== 'OK') {
+          resultDiv.innerHTML = '<div class="horror-card p-4 rounded-lg"><span class="blood-text text-xl">💀 ZEZO 💀</span></div>';
+          loader.classList.add('hidden');
+          return;
+        }
+
+        const submissions = data.result;
+        const solvedSet = new Set();
+        const problemLevels = {};
+        let lastSolvedTime = 0;
+
+        submissions.forEach(sub => {
+          if (sub.verdict === 'OK') {
+            const id = `${sub.problem.contestId}-${sub.problem.index}`;
+            solvedSet.add(id);
+            const level = sub.problem.index[0];
+            problemLevels[level] = (problemLevels[level] || 0) + 1;
+            if (sub.creationTimeSeconds > lastSolvedTime) {
+              lastSolvedTime = sub.creationTimeSeconds;
+            }
+          }
+        });
+
+        const solvedCount = solvedSet.size;
+        const lastSolved = new Date(lastSolvedTime * 1000).toLocaleString('ar-EG');
+
+        
+        const userRes = await fetch(`https://codeforces.com/api/user.info?handles=${defaultHandle}`);
+        const userData = await userRes.json();
+
+        let lastSeen = 'غير متاح';
+        let rank = 'غير معروف';
+        let rating = 'غير متاح';
+        let isOnline = false;
+
+        if (userData.status === 'OK') {
+          const user = userData.result[0];
+          const lastOnlineSeconds = user.lastOnlineTimeSeconds;
+          lastSeen = new Date(lastOnlineSeconds * 1000).toLocaleString('ar-EG');
+          rank = user.rank || rank;
+          rating = user.rating || rating;
+          isOnline = (new Date().getTime() / 1000 - lastOnlineSeconds) < 300;
+        }
+
+        const resultData = {
+          solvedCount,
+          lastSeen,
+          lastSolved,
+          rank,
+          rating,
+          problemLevels,
+          isOnline
+        };
+
+        localStorage.setItem('cf_stats', JSON.stringify({ timestamp: new Date().getTime(), data: resultData }));
+        renderUI(resultData);
+        loader.classList.add('hidden');
+
+      } catch (error) {
+        resultDiv.innerHTML = '<div class="horror-card p-4 rounded-lg"><span class="blood-text text-xl">⚠️ ZEZO 👹</span></div>';
+        loader.classList.add('hidden');
+      }
+    }
+
+    function renderUI(data) {
+      const resultDiv = document.getElementById('result');
+      const chartContainer = document.getElementById('chartContainer');
+
+      resultDiv.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="horror-card p-6 rounded-xl creepy-border">
+            <div class="flex items-center justify-center mb-2">
+              <span class="text-3xl pulsing-eye">👤</span>
+            </div>
+            <p class="text-gray-300">Id</p>
+            <p class="blood-text text-xl font-bold">${defaultHandle}</p>
+          </div>
+          
+          <div class="horror-card p-6 rounded-xl creepy-border">
+            <div class="flex items-center justify-center mb-2">
+              <span class="text-3xl pulsing-eye">🏆</span>
+            </div>
+            <p class="text-gray-300">المسائل المحلولة</p>
+            <p class="text-green-400 text-2xl font-bold">${data.solvedCount}</p>
+          </div>
+          
+          <div class="horror-card p-6 rounded-xl creepy-border">
+            <div class="flex items-center justify-center mb-2">
+              <span class="text-3xl pulsing-eye">🎖️</span>
+            </div>
+            <p class="text-gray-300">لقب الشرف</p>
+            <p class="text-purple-400 font-bold">${data.rank}</p>
+            <p class="text-pink-400">🔢 ${data.rating}</p>
+          </div>
+          
+          <div class="horror-card p-6 rounded-xl creepy-border">
+            <div class="flex items-center justify-center mb-2">
+              <span class="text-3xl pulsing-eye">⏰</span>
+            </div>
+            <p class="text-gray-300">آخر ظهور</p>
+            <p class="${data.isOnline ? 'text-green-400' : 'text-purple-400'} font-bold text-sm">
+              ${data.lastSeen}
+              ${data.isOnline ? '<br><span class="text-green-400 animate-pulse">🟢 نشط الآن</span>' : ''}
+            </p>
+          </div>
+        </div>
+        
+        <div class="horror-card p-6 rounded-xl mt-6 creepy-border">
+          <div class="flex items-center justify-center space-x-3 rtl:space-x-reverse">
+            <span class="text-2xl pulsing-eye">⚡</span>
+            <div>
+              <p class="text-gray-300">اخر مسائله تم حلها</p>
+              <p class="blood-text text-lg font-bold">${data.lastSolved}</p>
+            </div>
+            <span class="text-2xl pulsing-eye">⚡</span>
+          </div>
+        </div>
+      `;
+
+      // Render Chart
+      chartContainer.classList.remove('hidden');
+      const canvas = document.getElementById('solvedChart');
+      
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+      
+      const ctx = canvas.getContext('2d');
+      chartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: Object.keys(data.problemLevels),
+          datasets: [{
+            label: 'عدد المسائل المحلوله',
+            data: Object.values(data.problemLevels),
+            backgroundColor: 'rgba(255, 0, 0, 0.7)',
+            borderColor: 'rgba(139, 0, 0, 1)',
+            borderWidth: 2,
+            shadowColor: 'rgba(255, 0, 0, 0.5)',
+            shadowBlur: 10
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: '#e5e7eb',
+                font: {
+                  size: 14,
+                  weight: 'bold'
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: '#e5e7eb'
+              },
+              grid: {
+                color: 'rgba(255, 0, 0, 0.3)'
+              }
+            },
+            x: {
+              ticks: {
+                color: '#e5e7eb'
+              },
+              grid: {
+                color: 'rgba(255, 0, 0, 0.3)'
+              }
+            }
+          }
+        }
+      });
+    }
+
+    
+    createMatrixEffect();
+    fetchSolvedProblems();
+    setInterval(fetchSolvedProblems, 600000); // 10 minutes
+    setInterval(addGlitchEffect, 5000); // Add glitch every 5 seconds
+
+    // Add random scary sounds effect (visual only)
+    setInterval(() => {
+      const scaryEmojis = ['💀', '👻', '🔥', '⚡', '👁️', '🩸'];
+      const randomEmoji = scaryEmojis[Math.floor(Math.random() * scaryEmojis.length)];
+      
+      const floatingEmoji = document.createElement('div');
+      floatingEmoji.textContent = randomEmoji;
+      floatingEmoji.style.position = 'fixed';
+      floatingEmoji.style.left = Math.random() * window.innerWidth + 'px';
+      floatingEmoji.style.top = window.innerHeight + 'px';
+      floatingEmoji.style.fontSize = '2rem';
+      floatingEmoji.style.zIndex = '1000';
+      floatingEmoji.style.pointerEvents = 'none';
+      floatingEmoji.style.animation = 'matrix-fall 3s linear forwards';
+      
+      document.body.appendChild(floatingEmoji);
+      
+      setTimeout(() => {
+        if (document.body.contains(floatingEmoji)) {
+          document.body.removeChild(floatingEmoji);
+        }
+      }, 3000);
+    }, 2000);
+  </script>
+
+</body>
+</html>
